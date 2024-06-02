@@ -1,0 +1,54 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiZWxvdGxhbkB1di5teCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2dpdmVubmFtZSI6IkZlcm5hbmRvIEVsb3RsYW4iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhZG9yIiwiaXNzIjoiU2Vydmlkb3JGZWlKV1QiLCJhdWQiOiJDbGllbnRlc0ZlaUpXVCIsImlhdCI6MTcxNzI5ODQzOSwiZXhwIjoxNzE3Mjk5NjM5fQ.C4OzL6wqv5xtuckizbHu59IaCsMbEA9PfhSBvUSZFxA
+
+GET http://localhost:3000/api/categorias
+Authorization: Bearer {{ token }}
+
+###
+
+POST http://localhost:3000/api/auth
+Content-Type: application/json
+
+{
+    "email": "elotlan@uv.mx",
+    "password": "patito"
+}
+
+###
+
+POST http://localhost:3000/api/auth
+Content-Type: application/json
+
+{
+    "email": "patito@uv.mx",
+    "password": "patito"    
+}
+
+###
+
+GET http://localhost:3000/api/auth/tiempo
+Authorization: Bearer {{ token }}
+
+###
+
+
+GET http://localhost:3000/api/roles
+Content-Type: application/json
+Authorization: Bearer {{ token }}
+
+###
+
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+Authorization: Bearer {{ token }}
+
+{
+    "email": "prueba3@uv.mx",
+    "password": "patito",
+    "nombre": "Un nuevo usuario con JWT",
+    "rol": "Administrador"
+}
+
+###
+
+GET http://localhost:3000/api/usuarios
+Authorization: Bearer {{ token }}
